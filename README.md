@@ -16,5 +16,5 @@ Tkinter (customtkinter) – Modern graphical user interface
 Pillow (PIL) – Image processing and annotation rendering
 OpenCV (cv2) – Background image processing
 
-![Application View](https://raw.githubusercontent.com/kamilczynski/FrogPix/main/application view 2.png)
-![Application View](https://raw.githubusercontent.com/kamilczynski/FrogPix/main/application view.png)
+![Application View](https://raw.githubusercontent.com/kamilczynski/FrogPix/main/applicationview2.png)
+![Application View](https://raw.githubusercontent.com/kamilczynski/FrogPix/main/applicationview.png)
