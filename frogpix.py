@@ -13,8 +13,8 @@ class YOLOViewer:
         self.master.title("FrogPix")
         self.master.geometry("800x600")
 
-        self.bg_image_path = r"C:\Users\topgu\Desktop\Splotowe Sieci Neuronowe\frogpix.png"
-        self.icon_path = r"C:\Users\topgu\Desktop\Splotowe Sieci Neuronowe\frogpix.ico"
+        self.bg_image_path = r"C:\Users\frogpix.png"
+        self.icon_path = r"C:\Users\frogpix.ico"
 
         try:
             self.master.iconbitmap(self.icon_path)
@@ -37,7 +37,7 @@ class YOLOViewer:
         self.image_label = tk.Label(master)
         self.image_label.pack(pady=10)
 
-        # Ramka nawigacyjna (przyciski Previous i Next)
+        # Navigation frame (Previous and Next buttons)
         self.nav_frame = tk.Frame(master, bg="#242424")
         self.btn_prev = ctk.CTkButton(
             self.nav_frame, text="<< Previous", command=self.show_prev_image,
@@ -55,14 +55,14 @@ class YOLOViewer:
         )
         self.btn_next.pack(side=tk.LEFT, padx=10)
 
-        # Na początku panel z przyciskami jest ukryty
+        # At first, the button panel is hidden
         self.nav_frame.pack_forget()
 
-        # Dodajemy etykietę do wyświetlania nazwy obrazu i kolejności.
-        # Nie pakujemy jej od razu, więc na głównym ekranie nie będzie widoczna.
+        # We add a label to display the image name and order.
+        # We don't pack it right away, so it won't be visible on the main screen.
         self.info_label = ctk.CTkLabel(master, text="", font=font, text_color="white")
 
-        # Ramka na ścieżkę folderu i przycisk "Select" (widoczna od początku)
+        # Folder path frame and "Select" button (visible from the beginning)
         self.path_frame = tk.Frame(master, bg="#242424")
         self.input_entry = ctk.CTkEntry(
             self.path_frame, width=300, placeholder_text="Input folder",
@@ -98,9 +98,9 @@ class YOLOViewer:
         self.master.configure(bg="#242424")
         self.background_label.place_forget()
 
-        # Wyświetlamy panel nawigacyjny
+        # We display the navigation panel
         self.nav_frame.pack(pady=10)
-        # Pakujemy info_label poniżej przycisków
+        # We pack info_label below the buttons
         self.info_label.pack(pady=10)
 
         self.display_current_image()
@@ -130,7 +130,7 @@ class YOLOViewer:
         self.photo = ImageTk.PhotoImage(image_with_boxes)
         self.image_label.config(image=self.photo)
 
-        # Aktualizacja etykiety z nazwą obrazu i kolejnością (np. "obraz.jpg (1/50)")
+        # Update label with image name and order (e.g. "image.jpg (1/50)")
         self.info_label.configure(
             text=f"{os.path.basename(image_path)} ({self.current_index+1}/{len(self.image_paths)})"
         )
